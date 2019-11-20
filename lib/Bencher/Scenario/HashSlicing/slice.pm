@@ -23,6 +23,16 @@ our $scenario = {
             name => 'map+grep',
             code_template => 'state $hash = <hash>; state $keys = <keys>; +{ map {$_ => $hash->{$_}} grep { exists $hash->{$_} } @$keys}',
         },
+        {
+            module => 'Hash::Subset',
+            function => 'hashref_subset',
+            code_template => 'state $hash = <hash>; state $keys = <keys>; Hash::Subset::hashref_subset($hash, $keys)',
+        },
+        {
+            module => 'Hash::MoreUtils',
+            function => 'slice_exists',
+            code_template => 'state $hash = <hash>; state $keys = <keys>; my %h = Hash::MoreUtils::slice_exists($hash, @$keys); \%h',
+        },
     ],
 
     datasets => [
