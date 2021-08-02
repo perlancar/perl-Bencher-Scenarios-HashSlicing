@@ -2,3 +2,4 @@ Bencher-Scenarios-HashSlicing-*
 .build
 *~
 nytprof*
+.DS_Store
